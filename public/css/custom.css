@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #D35400 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  border-bottom: #FE6703 !important;
+}
+
+.navbar-brand{
+  color: #fff !important;
+}
+
+.nav li a{
+  color: #fff !important;
+}
+
+.afro-title{
+  color: #D35400;
+}
+
+.afro-front-image{
+  background: #FE6703;
+  height: 300px;
+  width: auto;
+  margin-top: 50px;
+}
+
+.afro-landing-header{
+  color: #fff;
+  font-size: 48px;
+  text-align: center;
+  
+}

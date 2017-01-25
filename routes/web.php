@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/tiny', function () {
+    return view('tinymce');
+});
 
 Auth::routes();
 
