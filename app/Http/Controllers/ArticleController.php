@@ -12,11 +12,15 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
         $articles = Article::where('is_draft',0)->where('is_public',1)->orderBy('created_at','desc')->paginate(10);
-        return view('articles',['articles'=>$articles]);
+        $latest = Article::latest()->first();
+        $populars = Article::where('is_draft',0)->where('is_public',1)->orderBy('views','desc')->get();
+
+        return view('dash',['articles'=>$articles,'latest'=>$latest, 'populars'=>$populars]);
     }
 
     /**
@@ -38,7 +42,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //
-        
+
     }
 
     /**
@@ -50,6 +54,8 @@ class ArticleController extends Controller
     public function show($id)
     {
         //
+        $article = Article::where('id',$id)->first();
+        return view('article',['article'=>$article]);
     }
 
     /**

@@ -11,12 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ArticleController@index');
 Route::get('/tiny', function () {
     return view('tinymce');
 });
+
+Route::get('/dash', function () {
+    return view('myhome');
+});
+
+Route::get('/article/{id}', 'ArticleController@show');
 
 Auth::routes();
 
